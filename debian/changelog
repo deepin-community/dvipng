@@ -1,0 +1,259 @@
+dvipng (1.15-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Convert package from cdbs to debhelper.
+  * Raise package compatibility to level 11.
+  * debian/copyright:
+    - Convert to DEP-5 syntax.
+  * debian/control:
+    - Remove cdbs from the Build-Depends list.
+    - Build-Depend on debhelper (version 11), pkg-config and texlive.
+  * debian/rules:
+    - Use debhelper syntax.
+    - Add 'hardening=+all' to DEB_BUILD_MAINT_OPTIONS.
+  * debian/patches/acinclude.m4.patch:
+    - Ensure all custom package macros are automatically included in the
+      regenerated aclocal.m4 file.
+  * debian/patches/freetype2_pkg-config.patch:
+    - Use pkg-config to detect FreeType 2, as freetype-config is not installed
+      in FreeType 2.9.1 or later (Closes: #887606).
+  * debian/patches/spelling.patch:
+    - Fix spelling errors identified by Lintian.
+
+ -- Hugh McMaster <hugh.mcmaster@outlook.com>  Tue, 13 Nov 2018 18:42:31 +1100
+
+dvipng (1.15-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #810364)
+  * New release fixes segfaults (Closes: #778524, #712570)
+  * Build-Depends: replace libgd2-noxpm-dev with libgd-dev (Closes: #880766)
+  * Update Standards-Version to 4.1.2
+
+ -- Varun Hiremath <varun@debian.org>  Tue, 09 Jan 2018 23:30:45 -0500
+
+dvipng (1.14-2) unstable; urgency=low
+
+  * Build-Depends replace libpng12-dev with libpng-dev
+  * Update Standards-Version to 3.9.4
+  * Update Vcs locations to the new git repository
+
+ -- Varun Hiremath <varun@debian.org>  Sat, 10 Aug 2013 19:03:50 -0400
+
+dvipng (1.14-1) unstable; urgency=low
+
+  * New upstream release (Closes: #598437)
+  * Remove libt1-dev build-dependency (Closes: #638757)
+  * Bump Standards-Version to 3.9.2
+
+ -- Varun Hiremath <varun@debian.org>  Fri, 26 Aug 2011 22:55:08 -0400
+
+dvipng (1.13-1) unstable; urgency=low
+
+  * New upstream release
+    - Fixes CVE-2010-0829, (Closes: #580628)
+  * Switch to source format 3.0
+  * Bump Standards-Version to 3.8.4
+
+ -- Varun Hiremath <varun@debian.org>  Fri, 07 May 2010 23:42:19 -0400
+
+dvipng (1.12-3) unstable; urgency=low
+
+  * Rebuild to link against new libkpathsea (Closes: #561925)
+
+ -- Varun Hiremath <varun@debian.org>  Thu, 24 Dec 2009 03:18:25 -0500
+
+dvipng (1.12-2) unstable; urgency=low
+
+  * Add ghostscript to Depends (Closes: #554986)
+
+ -- Varun Hiremath <varun@debian.org>  Wed, 11 Nov 2009 21:22:34 -0500
+
+dvipng (1.12-1) unstable; urgency=low
+
+  * New upstream release
+  * Rebuild with debhelper >= 7 (Closes: #549516)
+  * Bump Standards-Version to 3.8.3
+  * Remove Torsten from Uploaders as requested
+  * Remove quilt from Build-Depends
+  * Remove obsolete tetex-bin from Depends
+  * Fix debian/watch file and add get-orig-source target in
+    debian/rules
+
+ -- Varun Hiremath <varun@debian.org>  Sat, 10 Oct 2009 02:29:09 -0400
+
+dvipng (1.11-1) unstable; urgency=low
+
+  * new upstream release
+  * Update debian/watch.
+  * Remove the patch that has been applied upstream.
+
+ -- Torsten Werner <twerner@debian.org>  Wed, 11 Jun 2008 23:05:01 +0200
+
+dvipng (1.9-6) unstable; urgency=low
+
+  * Switch to cdbs
+  * debian/control:
+    + Add cdbs to Build-Depends
+    + Build-Depend on debhelper >= 6
+    + Add Homepage header and replace XS-Vcs with Vcs
+    + Bump up Standards-Version to 3.7.3
+  * debian/compat: bump to 6
+  * debian/copyright: fix encoding and make it valid UTF-8
+  * Remove dvipng.sgml, dvipng.links and dvipng.install - not required
+
+ -- Varun Hiremath <varun@debian.org>  Sat, 19 Jan 2008 02:20:27 +0530
+
+dvipng (1.9-5) unstable; urgency=low
+
+  * debian/control: drop libkpathsea4-dev from Build-Depends (Closes: #429676)
+
+ -- Varun Hiremath <varunhiremath@gmail.com>  Tue, 19 Jun 2007 19:56:05 +0530
+
+dvipng (1.9-4) unstable; urgency=low
+
+  * Add Build-Depends: quilt.
+  * Minor fix in debian/rules (but we should switch to cdbs)
+
+ -- Torsten Werner <twerner@debian.org>  Wed, 21 Mar 2007 21:13:36 +0100
+
+dvipng (1.9-3) unstable; urgency=low
+
+  * Include an upstream patch to fix SEGV on broken dvi file (Closes: #412934)
+
+ -- Varun Hiremath <varunhiremath@gmail.com>  Tue, 20 Mar 2007 20:55:16 +0530
+
+dvipng (1.9-2) unstable; urgency=high
+
+  * Substitute tetex-base with tetex-bin in Depends (Closes: #409400)
+  * debian/control: change short description to "convert DVI files to PNG
+    graphics", thanks to Frank Küster for the suggestion.
+  * debian/copyright: make some minor corrections
+
+ -- Varun Hiremath <varunhiremath@gmail.com>  Thu,  8 Feb 2007 18:59:43 +0530
+
+dvipng (1.9-1) unstable; urgency=low
+
+  [ Varun Hiremath ]
+  * New upstream release (Closes: #401151, #398181, #366946)
+  * New maintainer (Closes: #391195)
+  * debian/control: Build-Depend on debhelper 5
+  * debian/compat: switch to 5
+  * Add XS-X-Vcs-Svn header in debian/control
+
+  [ Torsten Werner ]
+  * Add myself to Uploaders in debian/control.
+
+ -- Torsten Werner <twerner@debian.org>  Fri,  1 Dec 2006 21:53:42 +0100
+
+dvipng (1.8-1) unstable; urgency=low
+
+  * QA Upload.
+  * Set maintainer to Debian QA Group.
+  * New upstream version (1.8). Closes: #338807.
+    - No longer replaces symbols. Closes: #330540.
+    - Chooses better names for output files. Closes: #346181.
+  * Acknowledge NMU. Thanks to Frank Lichtenheld. Closes: #332702.
+  * debian/dvipng.links: Provide /usr/bin/dvigif as a symbolic link.
+    Closes: #327130.
+  * debian/control:
+    - Build against libkpathsea4-dev and add "Build-Depends:" for this.
+    - Remove build dependency "tetex-extra" which is unused.
+    - Remove build dependency "docbook-to-man" as upstream provides manpage now.
+    - Depend on tetex-base or texlive-base-bin. Closes: #346084.
+    - Added homepage to package description.
+    - Added Kapil Hari Paranjape to Uploaders.
+    - Standards Version: 3.7.2. No changes required.
+  * debian/copyright:
+    - Fix the URL for upstream.
+    - Updated FSF mail address.
+    - Put actual copyright statement in this file. Thanks to James Westby
+      for pointing this out.
+  * debian/dirs: Removed. Not required.
+    Thanks to James Westby for pointing this out.
+  * debian/rules:
+    - Followed suggestion of George Danchev to fix
+      "clean" target.
+    - Added target "binary-indep" as required by Debian policy
+      section 4.8. Closes: #395681.
+  * README, INSTALL: Removed the addition of section headers.
+    Patch now consists only of debian/ directory.
+
+ -- Kapil Hari Paranjape <kapil@imsc.res.in>  Sun, 29 Oct 2006 17:15:50 +0530
+
+dvipng (1.5-2.1) unstable; urgency=high
+
+  * Non-maintainer upload during BSP.
+  * Add build-dependency on texinfo since tetex doesn't depend on
+    it anymore. (Closes: #332702)
+
+ -- Frank Lichtenheld <djpig@debian.org>  Fri, 28 Oct 2005 20:36:27 +0200
+
+dvipng (1.5-2) unstable; urgency=low
+
+  * added t1lib support to dvipng; by adding libt1-dev to Build-Depends
+    line in debian/control (Closes:#298653)
+
+ -- Brian R Furry <bfurry@nac.net>  Mon, 14 Mar 2005 23:18:17 -0500
+
+dvipng (1.5-1) unstable; urgency=low
+
+  * Corrected the URL in the debian/watch file.
+  * New Upstream Release (Closes:#296036)
+
+ -- Brian R Furry <bfurry@nac.net>  Mon, 21 Feb 2005 14:40:12 -0500
+
+dvipng (1.4-1) unstable; urgency=low
+
+  * Cosmetically cleaned a small part of debian/rules under the clean target
+  * New Upstream Release
+
+ -- Brian R Furry <bfurry@nac.net>  Mon,  3 Jan 2005 21:13:02 -0500
+
+dvipng (1.2-2) unstable; urgency=low
+
+  * Replaced 'libgd2-xpm-dev' with 'libgd2-noxpm-dev' on the Build-Depends line
+    of debian/control (Closes:#281189)
+
+ -- Brian R Furry <bfurry@nac.net>  Sun, 14 Nov 2004 14:45:15 +0000
+
+dvipng (1.2-1) unstable; urgency=low
+
+  * Replaced 'libgd2-dev' with 'libgd2-xpm-dev' on the Build-Depends line
+    of debian/control
+  * Included upstream ChangeLog file in the documentation
+  * Added 'dh_install' to install target of the debian/rules file
+    instead of '$(MAKE) install-dvipng prefix=$$(pwd)/debian/dvipng/usr'
+  * Removed dvipng.1 from the clean target as well as dvipng.sgml from
+    the build target in debian/rules.  Upstream has provided a manpage.
+  * Added config.status to the clean target of debian/rules
+  * New Upstream release
+
+ -- Brian R Furry <bfurry@nac.net>  Thu, 19 Aug 2004 14:51:28 +0000
+
+dvipng (1.0+0-1) unstable; urgency=low
+
+  * Corrected build depends line in debian/control file
+    Replaced libttf2 freetype2 with libfreetype6-dev
+  * Removed files from the debian dir in dvipng_1.0.orig.tar.gz
+    renamed the tarball to dvipng-1.0+0.orig.tar.gz
+  * Added dvipng.1 to the clean target of debian/rules since
+    it is automatically generated.
+
+ -- Brian R Furry <bfurry@nac.net>  Sat,  3 Apr 2004 21:18:32 +0000
+
+dvipng (1.0-1) unstable; urgency=low
+
+  * Fixed typo in package description (Closes: #241265)
+  * Removed line of cruft from debian/rules.
+  * New upstream Release.
+
+ -- Brian R Furry <bfurry@nac.net>  Thu,  1 Apr 2004 01:13:05 +0000
+
+dvipng (0.9-1) unstable; urgency=low
+
+  * Added '#include <ft2build.h>' and '#include FT_FREETYPE_H'
+    to dvipng.h; forewarded changes upstream.
+  * Removed 'INSTALL' and 'README' from the clean target.
+  * Initial Release. (Closes: #226022)
+
+ -- Brian R Furry <bfurry@nac.net>  Mon, 16 Feb 2004 03:54:36 +0000

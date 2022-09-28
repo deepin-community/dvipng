@@ -1,0 +1,43 @@
+Description: Fix spelling errors identified by Lintian.
+Author: Hugh McMaster <hugh.mcmaster@outlook.com>
+Last-Update: 2018-11-10
+
+Index: dvipng-1.15/dvipng.c
+===================================================================
+--- dvipng-1.15.orig/dvipng.c
++++ dvipng-1.15/dvipng.c
+@@ -144,7 +144,7 @@ int main(int argc, char ** argv)
+   ClearEncoding();
+   ClearSubfont();
+   if (libfreetype!=NULL && FT_Done_FreeType(libfreetype))
+-    Fatal("an error occured during freetype destruction");
++    Fatal("an error occurred during freetype destruction");
+   libfreetype = NULL;
+ #endif
+ 
+Index: dvipng-1.15/ft.c
+===================================================================
+--- dvipng-1.15.orig/ft.c
++++ dvipng-1.15/ft.c
+@@ -88,7 +88,7 @@ bool InitFT(struct font_entry * tfontp)
+ 
+   if (libfreetype==NULL) {
+     if (FT_Init_FreeType( &libfreetype )) {
+-      Warning("an error occured during freetype initialisation, disabling it"); 
++      Warning("an error occurred during freetype initialisation, disabling it");
+       option_flags &= ~USE_FREETYPE;
+       return(false);
+     } 
+Index: dvipng-1.15/set.c
+===================================================================
+--- dvipng-1.15.orig/set.c
++++ dvipng-1.15/set.c
+@@ -150,7 +150,7 @@ void WriteImage(char *pngname, int pagen
+       sprintf(freeme,pngname,pagenum);
+       pngname = freeme;
+     } else {
+-      Fatal("unacceptible format spec in output file name");
++      Fatal("unacceptable format spec in output file name");
+     }
+   }
+ #ifdef HAVE_GDIMAGEGIF
